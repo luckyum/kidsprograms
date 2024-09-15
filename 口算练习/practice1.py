@@ -70,7 +70,7 @@ def generate_problem(level):
 
     elif level == 6:
         # 20以内加减法综合练习
-        level = random.randint(1,5)
+        level = random.randint(3,5)
         if level == 5:
             while True:
                 num1 = random.randint(11, 15) 
