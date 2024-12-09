@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 practice1.py
+python3 main.py
