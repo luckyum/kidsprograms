@@ -185,13 +185,12 @@ def generate_pdf(problems, level, pages, filename="math_problems.pdf"):
         pdf.set_line_width(0.5)
         pdf.line(10, y_offset, 200, y_offset)  # 画线的起点和终点
     pdf.output(filename)
-    print(f"PDF 文件已保存为 {filename}")
 
 # 主函数，输入页数和难度级别，并生成题目
 def main():
     # 打印难度级别说明
     print("""
-    1年级 难度级别:
+    一年级 难度级别:
     1. 10以内加减法,如 3+5,8-2
     2. 10分解组合法,比 7+3=10、6+4=10
     3. 凑10法,如 8+6,先凑成 10,即 8+2=10,再加上剩余的4
@@ -207,15 +206,30 @@ def main():
     13. 100以内加减法综合练习
     """)
 
-    level = int(input("请选择难度级别 (1-13): "))
-    pages = int(input("请输入要生成的页数(1-10): "))
+    strlevel = input("请选择难度级别 (1-13): ")
+    strpages = input("请输入要生成的页数(1-10): ")
+
+    if strlevel == '':
+        level = 1
+    else:
+        level = int(strlevel)
+    
+    if strpages == '':
+        pages =1
+    else:
+        pages = int(strpages)
+
+    print("选择难度【",level_names[level] ,"】, 打印【",str(pages) ,"】页。")
+    filename = "一年级口算练习.pdf"
+    print(f"PDF 文件已保存为 【 {filename} 】")
 
     # 每页 120 道题目，总共生成 页数 * 120 道题目
     total_problems = pages * 120
     problems = [generate_problem(level) for _ in range(total_problems)]
 
     # 生成包含多页的 PDF
-    generate_pdf(problems, level, pages)
+    filename = "一年级口算练习.pdf"
+    generate_pdf(problems, level, pages,filename)
 
 if __name__ == "__main__":
     main()
