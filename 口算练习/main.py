@@ -16,7 +16,7 @@ def main():
 
     if pages == 1:
         os.system('python3 practice1.py')
-    elif page == 2:
+    elif pages == 2:
         os.system('python3 practice2.py')
 
 
