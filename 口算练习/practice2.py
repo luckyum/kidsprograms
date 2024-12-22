@@ -83,14 +83,14 @@ def generate_problem(level):
 
     elif level == 6:
         # 九九乘法表
-        num1 = random.randint(1, 9) 
-        num2 = random.randint(1, 9)
+        num1 = random.randint(2, 9) 
+        num2 = random.randint(2, 9)
         return f"{num1} * {num2} ="     
 
     elif level == 7:
         # 个位乘法求商
-        num1 = random.randint(1, 9) 
-        num2 = random.randint(1, 9)
+        num1 = random.randint(2, 9) 
+        num2 = random.randint(2, 9)
         sum_result = num1 * num2
         return f"{num1} * (        ) = {sum_result}"  
 
